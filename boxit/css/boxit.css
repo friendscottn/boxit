@@ -9,7 +9,6 @@
 	bottom:0;
 }
 .boxit{
-	width: 600px;
 	z-index: 51;
 	max-width: 94%;
 	max-height: 100%;
@@ -22,4 +21,8 @@
 .boxit-content
 {
 	padding: 15px;
+}
+.boxit-content img
+{
+	max-width: 100%;
 }

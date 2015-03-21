@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>BoxIt Demo</title>
@@ -6,13 +6,13 @@
 	<link rel="stylesheet" href="css/boxit.css" />
 </head>
 <body>
-	<button class="button" onclick="$('.boxit').boxit('open');">Open</button>
+	<button class="button" onclick="$('.boxit').boxit().open();">Open</button>
 	<!--Start Modal-->
 	<div class="boxit">
 		<div class="boxit-content">
 			<h1>Header</h1>
 			<p>Content goes here...</p>
-			<button class="button" onclick="$('.boxit').boxit('close');">Close</button>
+			<button class="button" onclick="$('.boxit').boxit().close();">Close</button>
 		</div>
 	</div>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js" ></script>

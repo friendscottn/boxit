@@ -1,5 +1,5 @@
 (function ($) {
-	$.fn.boxit = $.boxit = function (action) {
+	$.fn.boxit = function () {
 
 		function positionCenter(element) {
 			var windowWidth = $(window).width();
@@ -12,27 +12,23 @@
 			$(element).css({ top: topPosition, left: leftPosition });
 		}
 
-		if(action === 'reposition')
-		{
-			positionCenter($('.boxit'));
-		}
+		var modal = this;
 
-		if(action === "open") {
-			this.before("<div class='boxit-overlay'></div>");
-			this.show();
-			positionCenter(this);
-		}
-		if(action === "close") {
-			this.prev('.boxit-overlay').hide();
-			this.hide();
-		}
+		modal.open = function() {
+			modal.before('<div class="boxit-overlay"></div>');
+			modal.show();
+			positionCenter(modal);
+		};
 
-		return this; //enable chaining
+		modal.close = function () {
+			modal.prev('.boxit-overlay').hide();
+			modal.hide();
+		};
+
+		$(window).resize(function () {
+			positionCenter(modal);
+		});
+
+		return modal;
 	};
 }(adnsf$));
-
-
-
-$(window).resize(function () {
-	adnsf$.boxit('reposition');
-});
